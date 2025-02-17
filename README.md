@@ -6,7 +6,7 @@ Esta es una solución para [Entertainment web app challenge on Frontend Mentor](
 
 - [Ver demo en vivo](https://JCJetz.github.io/entertaiment_web_FM/)
 - [Repositorio](https://github.com/JCJetz/entertaiment_web_FM)
-- [Solución en Frontend Mentor](https://www.frontendmentor.io/solutions/TU-SOLUCION)
+- [Solución en Frontend Mentor](https://www.frontendmentor.io/solutions/reactjs-react-router-context-api-css-VUP-_szadQ)
 
 Una aplicación web de streaming que permite a los usuarios explorar y gestionar contenido multimedia, incluyendo películas y series de TV. La aplicación ofrece funcionalidades de búsqueda, marcadores y reproducción de contenido.
 
