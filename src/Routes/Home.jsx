@@ -4,6 +4,7 @@ import { useBookmarks } from "../BookmarkContext"; // Importa el hook del contex
 import bookmarkFull from "../assets/icons/icon-bookmark-full.svg";
 import bookmarkEmpty from "../assets/icons/icon-bookmark-empty.svg";
 import { useNavigate } from "react-router-dom"; // Importa el hook useNavigate
+import { getImagePath } from '../utils/imageHelper';
 
 function Home() {
   const { bookmarkedData, toggleBookmark } = useBookmarks(); // Obtengo los datos y la función para alternar el marcado desde el contexto
@@ -16,6 +17,11 @@ function Home() {
   useEffect(() => {
     setFiltered(bookmarkedData);
   }, [bookmarkedData]);
+
+  // Añade este useEffect para debugging
+  useEffect(() => {
+    console.log("Filtered data:", filtered);
+  }, [filtered]);
 
   const handleInputChange = (e) => {
     const searched = e.target.value.toLowerCase();
@@ -85,6 +91,9 @@ function Home() {
                         className="big_thumbnail"
                         src={movie.thumbnail.trending.large}
                         alt={movie.title}
+                        onError={(e) => {
+                          console.error('Error loading image:', e.target.src);
+                        }}
                       />
                       <div
                         className="bigplay_card row"
