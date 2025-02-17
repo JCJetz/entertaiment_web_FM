@@ -30,9 +30,9 @@ function TVSeries() {
   };
 
   return (
-    <div id="App">
-      <div className="main">
-        <div className="moviesContainer">
+    <main className="tvseries-container">
+      <div className="contentContainer">
+        <section className="moviesContainer">
           <div className="searchbar">
             <div className="searchbarimg" alt="icon-search"></div>
             <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
@@ -107,9 +107,9 @@ function TVSeries() {
                 ))
               : null}
           </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
 

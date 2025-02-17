@@ -16,6 +16,10 @@
   column-gap: 36px;
   flex-direction: row;
   overflow-x: hidden;  /* Evita desbordamiento horizontal */
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-right: 32px; /* padding derecho para equilibrar */
 }
 
 #App {
@@ -55,8 +59,9 @@ body {
   top: 0;
   left: 0;
   margin-top: 50px;
-  margin-left: 30px;
+  margin-left: 0;
   border-radius: 20px;
+  z-index: 1000;
 }
 
 .navLinksContainer {
@@ -90,6 +95,8 @@ li {
   fill: #5a698f;
   transition: fill 0.3s ease;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
 .icon-nav.active,
@@ -160,22 +167,21 @@ li {
   padding-bottom: 1px;
 }
 
-/* MoviesContainer */
+
 .moviesContainer {
   margin: 0 auto;
  
 }
 
-/* TituloContainer */
+
 .tituloContainer {
   font-size: 32px;
   text-align: left;
   color: aliceblue;
   position: relative;
-  /*left: 75px; */
+  margin-left: 30px;
   margin-top: 34px;
   margin-bottom: 34px;
-  margin-left: 64px;
 }
 .tituloContainerBookmarked {
   font-size: 32px;
@@ -187,12 +193,32 @@ li {
   margin-bottom: 34px;
 }
 
-/* horizontal-scroller */
+/* Mantener el estilo existente mientras se usa header */
+.tituloContainer h2,
+.recommendationForYou h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* Asegurar que el header herede los estilos existentes */
+.tituloContainer,
+.recommendationForYou {
+  display: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: inherit;
+  padding: inherit;
+}
+
+
 .horizontal-scroller-container {
   position: relative;
-  margin-left: 50px;
-  width: calc(100% - 150px); /* Ajustamos el ancho para mantener márgenes consistentes */
-  overflow: hidden; /* Prevenimos desbordamiento */
+  margin-left: 30px;
+  width: calc(100% - 60px);
+  overflow: hidden;
 }
 
 .horizontal-scroller {
@@ -203,7 +229,7 @@ li {
   overscroll-behavior: contain;
   scroll-snap-type: x mandatory;
   position: relative;
-  gap: 20px; /* Espaciado consistente entre cards */
+  gap: 20px; 
 }
 
 .horizontal-scroller::-webkit-scrollbar {
@@ -223,7 +249,7 @@ li {
   margin-top: 20px;
 }
 
-/* Media queries para diferentes tamaños de pantalla */
+
 @media screen and (max-width: 1440px) {
   .big_cards {
     width: calc(50% - 20px); /* 2 cards por fila */
@@ -331,12 +357,13 @@ li {
 }
 .big_card_title {
   font-size: 15px;
-  margin-right: 236px;
   color: #fff;
   position: absolute;
   bottom: 0;
-  padding: 10px;
-  left: 80px;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  margin: 0;
 }
 .big_card_title h2 {
   margin: -54px;
@@ -345,19 +372,20 @@ li {
   bottom: 0;
   margin-bottom: 8px;
   position: absolute;
+  width: 100%;
+  padding: 0 16px;
 }
 .innerMovieWrapper {
   display: flex;
-  left: 40px;
-  justify-content: space-between;
+  gap: 16px;
   position: relative;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
 }
 
 .big_cardInfo span {
   font-size: 18px;
-  margin-bottom: 50px;
+  margin-bottom: 8px;
   color: #ccc;
   padding: 8px;
 }
@@ -410,24 +438,55 @@ li {
   color: aliceblue;
   margin: 30px 0 25px;
   position: relative;
-  margin-left: 64px;
+  margin-left: 30px;
 }
 
 .contentContainer {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto;
-  margin: 0 auto;  /*  */
-  max-width: 100%;  /* */
+  margin-left: 66px;
+  width: calc(100% - 96px);
+  position: relative;
+  z-index: 1;
 }
 
+/* Estilos base del grid container */
 .grid_container {
-  column-gap: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-left: 50px; 
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  position: relative;
+  z-index: 1;
 }
+
+/* Estilos específicos para Home */
+.home-container .grid_container {
+  padding: 0;
+}
+
+/* Estilos específicos para Movies, TV Series y Bookmarked */
+.movies-container .grid_container,
+.tvseries-container .grid_container,
+.bookmarked-container .grid_container {
+  padding: 0 32px;
+}
+
+/* Ajustar el ancho de las tarjetas para mantener 5 por fila */
+.movies-container .smallCard,
+.tvseries-container .smallCard,
+.bookmarked-container .smallCard {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.movies-container .smallCard_img,
+.tvseries-container .smallCard_img,
+.bookmarked-container .smallCard_img,
+.movies-container .bg_smallCard_img,
+.tvseries-container .bg_smallCard_img,
+.bookmarked-container .bg_smallCard_img {
+  width: 100%;
+  height: 174px;
+}
+
 .row_cards {
   flex-wrap: wrap;
   width: 1091px;
@@ -439,10 +498,12 @@ li {
   
 }
 .smallCard {
-  margin: 20px; 
-  width: 280px;
+  margin: 20px;
+  width: 100%;
+  max-width: 280px;
   height: 226px;
   position: relative;
+  justify-self: center;
 }
 .smallCard_img {
   display: flex;
@@ -666,4 +727,72 @@ font-size: 70px;
 
 .player-controls button:hover {
   background: #6ba6ff;
+}
+
+/* Clase para ocultar texto visualmente pero mantenerlo accesible para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Mantener el estilo de las imágenes */
+.big_thumbnail_container,
+.smallCard_img {
+  margin: 0;
+  padding: 0;
+}
+
+.big_thumbnail_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.big_thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Asegurar que las figuras no afecten el layout */
+figure {
+  margin: 0;
+  padding: 0;
+  display: inherit;
+  width: inherit;
+  height: inherit;
+  position: inherit;
+}
+
+
+@media screen and (max-width: 1600px) {
+  .grid_container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .grid_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .grid_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
