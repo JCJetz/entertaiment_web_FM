@@ -14,17 +14,17 @@ import { BookmarkProvider } from "./BookmarkContext.js"; // Proveedor del contex
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <BrowserRouter>
-      <BookmarkProvider>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route index element={<Home />} /> 
-        <Route path="movies" element={<Movies />} />
-        <Route path="tvseries" element={<TVSeries />} />
-        <Route path="bookmarked" element={<Bookmarked />} />
-        <Route path="player/:id" element={<Player />} />
-      </Route>
-    </Routes>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BookmarkProvider>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} /> 
+          <Route path="movies" element={<Movies />} />
+          <Route path="tvseries" element={<TVSeries />} />
+          <Route path="bookmarked" element={<Bookmarked />} />
+          <Route path="player/:id" element={<Player />} />
+        </Route>
+      </Routes>
     </BookmarkProvider>
   </BrowserRouter>
 );
