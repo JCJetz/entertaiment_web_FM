@@ -30,7 +30,7 @@ function TVSeries() {
   };
 
   return (
-    <main className="tvseries-container">
+    <div className="tvseries-container">
       <div className="contentContainer">
         <section className="moviesContainer">
           <div className="searchbar">
@@ -109,7 +109,7 @@ function TVSeries() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }
 

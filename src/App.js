@@ -14,7 +14,7 @@ function App() {
       <nav className="navLinksContainer" aria-label="Main navigation">
         <NavBar />
       </nav>
-      <main className="main" role="main">
+      <main className="main">
         <div className="contentContainer">
           <Outlet />
         </div>

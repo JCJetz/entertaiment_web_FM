@@ -58,7 +58,7 @@ function Home() {
   };
 
   return (
-    <main className="home-container">
+    <div className="home-container">
       <div className="contentContainer">
         <section className="moviesContainer" aria-label="Movie Content">
           <form className="searchbar" role="search">
@@ -204,7 +204,7 @@ function Home() {
           </section>
         </section>
       </div>
-    </main>
+    </div>
   );
 }
 

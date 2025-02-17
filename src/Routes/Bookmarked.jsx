@@ -23,7 +23,7 @@ function Bookmarked() {
   }, [search, bookmarkedData]);
 
   return (
-    <main className="bookmarked-container">
+    <div className="bookmarked-container">
       <div className="contentContainer">
         <section className="moviesContainer">
           <div className="searchbar">
@@ -98,7 +98,7 @@ function Bookmarked() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }
 
