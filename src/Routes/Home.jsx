@@ -18,7 +18,7 @@ function Home() {
     setFiltered(bookmarkedData);
   }, [bookmarkedData]);
 
-  // Añade este useEffect para debugging
+  // este useEffect para debugging
   useEffect(() => {
     console.log("Filtered data:", filtered);
   }, [filtered]);

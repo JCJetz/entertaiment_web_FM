@@ -29,7 +29,7 @@ function Movies() {
   };
 
   return (
-    <main className="movies-container">
+    <div className="movies-container">
       <div className="contentContainer">
         <section className="moviesContainer">
           <div className="searchbar">
@@ -107,7 +107,7 @@ function Movies() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }
 

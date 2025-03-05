@@ -1,70 +1,68 @@
 # Frontend Mentor - Entertainment web app solution
 
-Esta es una solución para [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X).
+This is a solution for the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X).
 
-## 🔗 Enlaces
+## 🔗 Links
 
-- [Ver demo en vivo](https://JCJetz.github.io/entertaiment_web_FM/)
-- [Repositorio](https://github.com/JCJetz/entertaiment_web_FM)
-- [Solución en Frontend Mentor](https://www.frontendmentor.io/solutions/reactjs-react-router-context-api-css-VUP-_szadQ)
+- [Live Demo](https://JCJetz.github.io/entertaiment_web_FM/)
+- [Repository](https://github.com/JCJetz/entertaiment_web_FM)
+- [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/reactjs-react-router-context-api-css-VUP-_szadQ)
 
-Una aplicación web de streaming que permite a los usuarios explorar y gestionar contenido multimedia, incluyendo películas y series de TV. La aplicación ofrece funcionalidades de búsqueda, marcadores y reproducción de contenido.
+A streaming web application that allows users to explore and manage multimedia content, including movies and TV series. The application offers search, bookmarking, and content playback features.
 
+## 👀 Application Preview
+![Application Preview](./src/assets/github_cap.png)
 
-## 👀 Vista Previa de la Aplicación
-![Vista previa de la aplicación](./src/assets/github_cap.png)
+## Features
 
-## Características 
+### ✨ Key Features
 
-### ✨ Funcionalidades Clave
+- **Search System**: Real-time content search functionality
+- **Bookmarks**: Save/remove content as favorites (movies/TV series)
+- **Playback**: Video player interface (Player.jsx)
+- **Content Filtering**: Filter by category (movies/TV series)
+- **Display**: 
+  - Trending section with horizontal scroll
+  - Recommended content grid
+  - Interactive cards with detailed information
 
-- **Sistema de Búsqueda**: Búsqueda en tiempo real de contenido
-- **Marcadores**: Marcar/desmarcar contenido como favorito de películas y TVSeries
-- **Reproducción**: Interfaz de reproductor para el contenido seleccionado (Player.jxs)
-- **Filtrado de Contenido**: Por categorías (películas/series)
-- **Visualización**: 
-  - Vista de tendencias con scroll horizontal
-  - Grid de contenido recomendado
-  - Tarjetas interactivas con información detallada
+### Navigation
+- Sidebar navigation with access to:
+  - Home (Trending and Recommended)
+  - Movies
+  - TV Series
+  - Bookmarks
 
-### Navegación
-  - Barra de navegación lateral con acceso a:
-  - Home (Trending y Recomendados)
-  - Películas
-  - Series de TV
-  - Marcadores
-
-## 🚀 Tecnologías Utilizadas
+## 🚀 Technologies Used
 
 ### Frontend
-- React.js: Framework principal
-- React Router: Para gestión de rutas navegación
-- Context API: Manejo del estado global
-- CSS: puro para estilos
+- React.js: Main framework
+- React Router: Navigation management
+- Context API: Global state management
+- CSS: Pure CSS for styling
 
-### Herramientas
+### Tools
 - Create React App
-- npm como gestor de paquetes y dependencias
+- npm as package manager
 
+## Main Challenges
 
-## Principales Desafíos Enfrentados
+1. **State Management**
+   - Implementation of Context API for managing bookmark state globally
+   - State synchronization between components
 
-1. **Gestión de Estado**
-   - Implementación de Context API para manejar el estado global de marcadores
-   - Sincronización de estado entre componentes
+2. **Navigation and Routes**
+   - Configuration of nested routes
+   - Component navigation
 
-2. **Navegación y Rutas**
-   - Configuración de rutas anidadas
-   - Manejo de navegación entre componentes
+3. **User Interface**
+   - Implementation of horizontal scroll for trending content
+   - Responsive grid layout
+   - Smooth animations and transitions
 
-3. **Interfaz de Usuario**
-   - Implementación del scroll horizontal para contenido trending
-   - Diseño responsivo de la grid de contenido
-   - Animaciones y transiciones suaves
-
-4. **Optimización de Rendimiento**
-   - Manejo eficiente de listas y filtrados
-   - Implementación de búsqueda en tiempo real
+4. **Performance Optimization**
+   - Efficient list and filter handling
+   - Real-time search implementation
 
 
 
